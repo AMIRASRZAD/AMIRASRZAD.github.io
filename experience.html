@@ -1,0 +1,114 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Asrzad - Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Amir Asrzad</h1>
+        <div class="contact-links">
+            <a href="mailto:Amir_Asrzad@uml.edu">Email</a> /
+            <a href="https://scholar.google.com" target="_blank">Google Scholar</a> /
+            <a href="https://github.com/amirasrzad" target="_blank">Github</a> /
+            <a href="https://x.com/amirasrzad" target="_blank">X</a>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="experience.html">Experience</a>
+    </nav>
+    <div class="container">
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience">
+                <h3>Instructor, Data Mining for Business Intelligence</h3>
+                <p><strong>Organization:</strong> University of Massachusetts Lowell</p>
+                <p><strong>Duration:</strong> Fall 2024</p>
+                <p>Taught undergraduate course on data mining techniques, achieving a 4.2/5 evaluation.</p>
+            </div>
+            <div class="experience">
+                <h3>Instructor, Database Management Systems</h3>
+                <p><strong>Organization:</strong> University of Massachusetts Lowell</p>
+                <p><strong>Duration:</strong> Summer 2024</p>
+                <p>Delivered online undergraduate course on database systems, earning a 4.5/5 evaluation.</p>
+            </div>
+            <div class="experience">
+                <h3>Instructor, Business Information Systems</h3>
+                <p><strong>Organization:</strong> University of Massachusetts Lowell</p>
+                <p><strong>Duration:</strong> Fall 2023 - Spring 2024</p>
+                <p>Taught undergraduate course on business information systems, with evaluations of 4.1/5 (Fall 2023) and 4.3/5 (Spring 2024).</p>
+            </div>
+            <div class="experience">
+                <h3>Teaching Assistant, Various Courses</h3>
+                <p><strong>Organization:</strong> University of Massachusetts Lowell</p>
+                <p><strong>Duration:</strong> Fall 2021 - Spring 2023</p>
+                <p>Assisted in courses including Advanced Machine Learning, Management Information Systems, Statistics for Predictive Analytics, Systems Analysis and Design, Operations Management, and Operations Fundamentals.</p>
+            </div>
+            <div class="experience">
+                <h3>Venture Partner and Senior Business Analyst</h3>
+                <p><strong>Organization:</strong> BahmanCapital, Tehran, Iran</p>
+                <p><strong>Duration:</strong> 2016 - 2020</p>
+                <p>Led strategic analysis for investment decisions and developed data-driven models for market forecasting.</p>
+            </div>
+            <div class="experience">
+                <h3>Director of Project Management Office</h3>
+                <p><strong>Organization:</strong> Mellat Bank, Tehran, Iran</p>
+                <p><strong>Duration:</strong> 2014 - 2016</p>
+                <p>Oversaw project portfolios and implemented process improvements, reducing delivery times by 15%.</p>
+            </div>
+            <div class="experience">
+                <h3>Project Management Officer</h3>
+                <p><strong>Organization:</strong> Mellat Bank, Tehran, Iran</p>
+                <p><strong>Duration:</strong> 2011 - 2014</p>
+                <p>Coordinated cross-functional teams to deliver banking system upgrades and conducted risk analysis.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>© 2025 Amir Asrzad. All rights reserved.</p>
+    </footer>
+</body>
+</html>
