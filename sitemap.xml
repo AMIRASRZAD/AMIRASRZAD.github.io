@@ -18,14 +18,24 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://amirasrzad.github.io/publications.html</loc>
-  <lastmod>2025-06-24T08:28:09+00:00</lastmod>
+  <loc>https://amirasrzad.github.io/research.html</loc>
+  <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://amirasrzad.github.io/experience.html</loc>
-  <lastmod>2025-06-24T08:28:09+00:00</lastmod>
+  <loc>https://amirasrzad.github.io/teaching.html</loc>
+  <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://amirasrzad.github.io/service.html</loc>
+  <lastmod>2026-07-02T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://amirasrzad.github.io/gallery.html</loc>
+  <lastmod>2026-07-02T00:00:00+00:00</lastmod>
+  <priority>0.60</priority>
 </url>
 
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amir Asrzad - Research</title>
+<meta name="description" content="Research by Amir Asrzad: Explainable AI, Interpretable Machine Learning, and Human-AI Decision Making. Papers at ICIS, AMCIS, HICSS, and MIS Quarterly.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <p class="name"><a href="index.html">Amir Asrzad</a></p>
+    <p class="contact-line">
+        <a href="mailto:Amir_Asrzad@uml.edu">Email</a> ·
+        <a href="https://scholar.google.com/citations?user=SejEcSkAAAAJ&hl=en" target="_blank">Google Scholar</a> ·
+        <a href="https://github.com/amirasrzad" target="_blank">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/amir-asrzad/" target="_blank">LinkedIn</a>
+    </p>
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="service.html">Service</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+</header>
+
+<main class="wrap">
+    <h1 class="page-title">Research</h1>
+    <p>
+        My research studies Explainable AI (XAI), Interpretable Machine Learning, and Human&ndash;AI
+        Decision Making &mdash; how to generate AI explanations that are credible and risk-sensitive,
+        how to explain predictions when input data are missing, and how different sources of uncertainty
+        shape human trust in AI systems.
+    </p>
+
+    <h2 class="section-title">Conference Papers</h2>
+
+    <div class="paper">
+        <span class="paper-venue">AMCIS 2026</span>
+        <h3>More Than Confidence Scores: Do Different Types of Uncertainty Matter for Trust in AI?</h3>
+        <p class="authors">Asrzad, A., Tripathi, S., Li, X.-B.</p>
+        <p class="abstract">
+            Communicating uncertainty is essential for effective human&ndash;AI collaboration because it shapes
+            user trust and reduces both overreliance and unwarranted aversion. This study examines how aleatoric
+            (data-related) and epistemic (model-related) uncertainty differentially affect trust and decision
+            behavior. In a two-stage controlled experiment (N&nbsp;=&nbsp;240) using a high-stakes health
+            insurance cost prediction task, both forms of uncertainty significantly reduce behavioral reliance
+            on AI predictions relative to a no-uncertainty baseline, with data-driven (aleatoric) uncertainty
+            producing a stronger reduction than model-driven (epistemic) uncertainty. Transparent communication
+            of uncertainty modestly improves perceived satisfaction and usefulness for both types. The findings
+            show that the source of uncertainty is not interchangeable in its effects on trust, informing the
+            design of more effective uncertainty-communication strategies for high-stakes AI applications.
+        </p>
+        <p class="links">
+            <a href="#">[Paper]</a>
+            <a href="#">[Slides]</a>
+        </p>
+    </div>
+
+    <div class="paper">
+        <span class="paper-venue">ICIS 2024 &middot; Bangkok, Thailand</span>
+        <h3>Risk-Sensitive Counterfactual Explanations for AI Model Predictions</h3>
+        <p class="authors">Asrzad, A., Li, X.-B., Sarkar, S.</p>
+        <p class="abstract">
+            This paper presents a novel approach to risk-sensitive counterfactual explanations, improving AI
+            prediction interpretability by incorporating the risk associated with a prediction. Unlike
+            traditional counterfactuals that neglect the risk of misleading explanations, our method delivers
+            robust counterfactuals for high-risk scenarios and proximal counterfactuals for lower-risk cases,
+            ensuring actionable and risk-aware insights. Evaluated on two real-world datasets, our approach
+            outperforms state-of-the-art baselines on average risk, sparsity, and Local Outlier Factor (LOF)
+            metrics.
+        </p>
+        <p class="links">
+            <a href="https://aisel.aisnet.org/icis2024/" target="_blank">[Proceedings]</a>
+        </p>
+    </div>
+
+    <div class="paper">
+        <span class="paper-venue">ICIS 2023 &middot; Hyderabad, India</span>
+        <h3>Counterfactual Explanations for Incorrect Predictions Made by AI Models</h3>
+        <p class="authors">Asrzad, A., Li, X.-B.</p>
+        <p class="abstract">
+            This paper proposes a novel method to generate counterfactual explanations for misclassified
+            instances from black-box models, using a decision tree fitted to classification results and trust
+            scores to correct errors and tailor explanations for beneficial-to-adverse and adverse-to-beneficial
+            misclassifications. Evaluated on two real-world datasets against three state-of-the-art XAI methods,
+            it improves accuracy by correcting misclassifications and provides more plausible, sparse
+            explanations.
+        </p>
+        <p class="links">
+            <a href="https://aisel.aisnet.org/icis2023/" target="_blank">[Proceedings]</a>
+        </p>
+    </div>
+
+    <h2 class="section-title">Working Papers</h2>
+
+    <div class="paper">
+        <span class="paper-venue">MIS Quarterly &middot; Major Revision (R&amp;R)</span>
+        <h3>Credible and Risk-Sensitive Counterfactual Explanations (CARS) for Machine Learning Model Predictions</h3>
+        <p class="authors">Asrzad, A., Li, X.-B., Sarkar, S.</p>
+        <p class="abstract">
+            Existing XAI approaches typically take model predictions as given, without considering their
+            credibility &mdash; so explanations can be inadequate or misleading, eroding trust. We propose CARS,
+            a novel approach to credible and risk-sensitive explanations. We introduce a new credibility-score
+            measure to evaluate prediction reliability and flag unreliable predictions, and provide robust
+            counterfactuals to mitigate the risk of weak explanations alongside vigilant counterfactuals
+            sensitive to detecting undesirable changes. We validate the approach with an empirical evaluation on
+            real-world data and a user study demonstrating its usefulness, credibility, and risk awareness.
+        </p>
+    </div>
+
+    <div class="paper">
+        <span class="paper-venue">HICSS 2025 &middot; accepted; in preparation for JMIS</span>
+        <h3>Interpreting Black-Box Outcomes with Missing Inputs: A SHAP-Based Counterfactual Explanation Method (CEMI)</h3>
+        <p class="authors">Asrzad, A., Li, X.-B., Zhang, J.</p>
+        <p class="abstract">
+            Most existing XAI/IML methods assume complete input data and, when values are missing, apply simple
+            imputation before generating explanations. This study introduces CEMI (Counterfactual Explanations
+            with Missing Information), a SHAP-based counterfactual approach for black-box predictions with
+            missing inputs. CEMI encourages disclosure of missing features by guiding their completion and is
+            validated on real-world datasets, showing improved prediction clarity and cost evaluation of missing
+            information while outperforming baselines in sparsity, proximity, and accuracy.
+        </p>
+        <p class="links">
+            <a href="https://www.hicss.org/" target="_blank">[HICSS 2025]</a>
+        </p>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Amir Asrzad. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
