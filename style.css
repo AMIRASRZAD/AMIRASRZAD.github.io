@@ -8,6 +8,7 @@
     --muted: #5a5a5a;
     --rule: #dcdcdc;
     --accent: #7a2e2e;
+    --accent2: #1f4d4d;
     --bg: #ffffff;
     --max-width: 760px;
 }
@@ -107,18 +108,31 @@ nav.site-nav a:hover {
 /* ---------- Section headings ---------- */
 h1.page-title {
     font-size: 1.6em;
+    color: var(--accent);
     margin: 0 0 24px;
 }
 h2.section-title {
     font-size: 1.05em;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--muted);
-    border-bottom: 1px solid var(--rule);
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
     padding-bottom: 8px;
     margin: 44px 0 20px;
 }
 h2.section-title:first-of-type { margin-top: 30px; }
+
+/* ---------- Job market banner ---------- */
+.job-market-banner {
+    background: #f2ecec;
+    border-left: 4px solid var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+    padding: 14px 18px;
+    margin: 0 0 32px;
+    border-radius: 3px;
+    font-size: 0.98em;
+}
 
 /* ---------- News timeline ---------- */
 .news-list { margin: 0; padding: 0; list-style: none; }
@@ -172,6 +186,7 @@ h2.section-title:first-of-type { margin-top: 30px; }
     margin: 0 0 6px;
     font-size: 1.12em;
     font-weight: 700;
+    color: var(--accent2);
 }
 .paper .authors {
     color: var(--muted);
@@ -189,7 +204,7 @@ h2.section-title:first-of-type { margin-top: 30px; }
 
 /* ---------- Teaching / Service entries ---------- */
 .entry { margin-bottom: 26px; }
-.entry h3 { margin: 0 0 4px; font-size: 1.08em; }
+.entry h3 { margin: 0 0 4px; font-size: 1.08em; color: var(--accent2); }
 .entry .meta { color: var(--muted); font-size: 0.9em; margin: 0 0 8px; }
 .entry p { margin: 6px 0; font-size: 0.97em; }
 
